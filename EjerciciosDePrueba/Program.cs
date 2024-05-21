@@ -20,8 +20,19 @@ internal class Program
         //pruebacalculadora();
         //pruebaventilador();
         //pruebastereo();
-        pruebaClasesAbstractaYHerencia();
+        //pruebaClasesAbstractaYHerencia();
+        pruebacalculadoraPasajePorReferencia();
     }
+
+    private static void pruebacalculadoraPasajePorReferencia()
+    {
+        int a = 123;
+        int b = 10;
+        int total = 0;
+        Calculadora2 calculadora2 = new Calculadora2();
+        calculadora2.Sumar(a,b,ref total);
+        Console.WriteLine("la suma total es:" + total);
+     }
 
     private static void pruebaClasesAbstractaYHerencia()
     {
