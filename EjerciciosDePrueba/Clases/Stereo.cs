@@ -21,10 +21,10 @@ namespace EjerciciosDePrueba.Clases
 
         public Modostereo modo;
         public bool encendido;
-        public string radio;
-        public string bluetooth; 
-        public string pistaCD;
-        public string entradaAuxiliarAudio;
+        public string NombreRadio;
+        public string NombreBluetooth; 
+        public string PistaCD;
+        public string EntradaAuxiliarAudio;
 
 
 
@@ -59,7 +59,7 @@ namespace EjerciciosDePrueba.Clases
         {
             if (modo == Modostereo.Radio)
             {
-                radio = nombreRadio;
+                NombreRadio = nombreRadio;
             }
             else
             {
@@ -73,7 +73,7 @@ namespace EjerciciosDePrueba.Clases
         {
             if (modo==Modostereo.Bluetooth)
             {
-                bluetooth = nombreCancion;
+                NombreBluetooth = nombreCancion;
             }
             else
             {
@@ -85,7 +85,7 @@ namespace EjerciciosDePrueba.Clases
         {
             if (modo == Modostereo.Cd)
             {
-                pistaCD = pistadeCd;
+                PistaCD = pistadeCd;
             }
             else
             {
@@ -97,7 +97,7 @@ namespace EjerciciosDePrueba.Clases
         {
             if (modo == Modostereo.EntradaAuxiliarAudio)
             {
-                entradaAuxiliarAudio = entradaAudio;
+                EntradaAuxiliarAudio = entradaAudio;
             }
             else
             {
@@ -115,22 +115,22 @@ namespace EjerciciosDePrueba.Clases
             {
                 if (modo == Modostereo.EntradaAuxiliarAudio)
                 {
-                    Console.WriteLine($"Escuchando: {entradaAuxiliarAudio}");
+                    Console.WriteLine($"Escuchando: {EntradaAuxiliarAudio}");
                 }
 
                 if (modo == Modostereo.Radio)
                 {
-                    Console.WriteLine($"Escuchando: {radio}");
+                    Console.WriteLine($"Escuchando: {NombreRadio}");
                 }
 
                 if (modo == Modostereo.Cd)
                 {
-                    Console.WriteLine($"Escuchando: {pistaCD}");
+                    Console.WriteLine($"Escuchando: {PistaCD}");
                 }
 
                 if (modo == Modostereo.Bluetooth)
                 {
-                    Console.WriteLine($"Escuchando: {bluetooth}");
+                    Console.WriteLine($"Escuchando: {NombreBluetooth}");
                 }
 
                 
