@@ -69,7 +69,7 @@ namespace EjerciciosDePrueba.Clases
          
         }
 
-        public void SetNombreCancionBluetooth(string nombreCancion)
+        public void SetNombreCancionBluetooth(string nombreCancion)//los parametros estan contenidos dentro del parentesis en "(string nombreCancion)"
         {
             if (modo==Modostereo.Bluetooth)
             {

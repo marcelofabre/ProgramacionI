@@ -19,7 +19,14 @@ internal class Program
         //pruebapavaelectrica();
         //pruebacalculadora();
         //pruebaventilador();
-        pruebastereo();
+        //pruebastereo();
+        pruebaClasesAbstractaYHerencia();
+    }
+
+    private static void pruebaClasesAbstractaYHerencia()
+    {
+        gerente  juan= new gerente("Marcelo", "Fabre");
+        Console.WriteLine(juan.ImprimirDatos());
     }
 
     private static void pruebastereo()
