@@ -1,17 +1,20 @@
 ﻿
 using EjerciciosDePrueba.Clases;
 using EjerciciosDePrueba.Enums;
+using System.Diagnostics.Metrics;
 using System.Runtime.CompilerServices;
 
-internal class Program
+public class ProgramEjercicios
 {
     private static void Main(string[] args)
     {
         //PedirNombreYSaludar();
-        //CalcularDiasDeVida();
+        //Console.WriteLine(CalcularDiasDeVida(1,1,1));
+        Console.WriteLine(CalcularDiasLadosDeUnTriangulosss(1, 1, 1));
         //ImprimirMinimoDe4();
         //CalcularDiasLadosDeUnTriangulo(); 
-        //CalcularFechaValida();
+        //fechasValidasInvalidas();
+        //Console.WriteLine(ControlFechaValida(29, 2, 2023));
         //CalcularHorasFaltantes();
         //CalcularValorPago();
         //PruebaDeObjetosSplit();
@@ -21,7 +24,7 @@ internal class Program
         //pruebaventilador();
         //pruebastereo();
         //pruebaClasesAbstractaYHerencia();
-        pruebacalculadoraPasajePorReferencia();
+        //pruebacalculadoraPasajePorReferencia();
     }
 
     private static void pruebacalculadoraPasajePorReferencia()
@@ -163,23 +166,11 @@ private static void PedirNombreYSaludar()
     /*Creamos un método que nos pida los años, meses y días de vida
     y muestre al final la cantidad total de días de vida
      */
-    private static void CalcularDiasDeVida()
+    public static int CalcularDiasDeVida(int años, int meses, int dias )
     {
-        //declaramos las variables
-        int años,meses,dias,diasDeVida;
-
-        Console.Write("Ingrese sus años de vida:");
-        años=int.Parse(Console.ReadLine());
-
-        Console.Write("Ingrese sus meses de vida:");
-        meses = int.Parse(Console.ReadLine());
-
-        Console.Write("Ingrese sus días de vida:");
-        dias = int.Parse(Console.ReadLine());
-
+        int diasDeVida;
         diasDeVida = (años * 365) + (meses * 30) + dias;
-
-        Console.WriteLine($"Los días de vida totales son:{diasDeVida}");
+        return diasDeVida;
     }
     private static void CalcularDiasLadosDeUnTriangulo()
     {
@@ -212,53 +203,88 @@ private static void PedirNombreYSaludar()
 
       
     }
-    private static void CalcularFechaValida()
+
+    public static string CalcularDiasLadosDeUnTriangulosss(int lado1, int lado2, int lado3)
     {
+        //declarqamos las variables
+        
+       
+
+        if (lado1 == lado2 && lado2 == lado3)
+        {
+            return "Equilatero";
+        }
+
+        else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3)
+        {
+            return "Isósceles";
+        }
+
+        else
+        {
+            return "Escaleno";
+        }
+
+
+
+    }
+
+
+    private static void fechasValidasInvalidas()
+
+    {
+        //definir variables  
         int dia, mes, año;
 
-        Console.WriteLine("ingrese el numero de día");
+        // Pedir Informacion al usuario
+        Console.WriteLine("Ingrese el día");
         dia = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("ingrese el numero de mes");
+        Console.WriteLine("Ingrese el mes");
         mes = int.Parse(Console.ReadLine());
 
-        Console.WriteLine("ingrese el numero de año");
+        Console.WriteLine("Ingrese el año");
         año = int.Parse(Console.ReadLine());
 
 
-        //el DateTime.IsLeapYear(año) basicamente controla si el año es bisiesto o no
-        bool esBisiesto = DateTime.IsLeapYear(año);
+        if ((dia >= 1 && dia <= 31) && (mes == 1 || mes == 3 ||
+                mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12))
+            Console.WriteLine("Fecha Valida");
 
-        //"DateTime.DaysInMonth(año, mes)" verifica que el dia este en el rango valido dependiendo del dia y el mes que se encuentre
+        else if ((dia >= 1 && dia <= 30) && (mes == 4 || mes == 6 || mes == 9 || mes == 11))
+            Console.WriteLine("Fecha Valida ");
 
-        if (mes >= 1 && mes <= 12 && dia >= 1 && dia <= DateTime.DaysInMonth(año, mes))
+        else if ((dia == 29) && (mes == 2) && (año % 4 == 0) || (dia >= 1 && dia <= 28) && (mes == 2))
 
-        {
-            Console.WriteLine($"{dia}/{mes}/{año} es una fecha válida.");
-        }
+            Console.WriteLine("Fecha Valida ");
+
         else
-        {
-            Console.WriteLine($"{dia}/{mes}/{año} no es una fecha válida.");
-        }
+            Console.WriteLine("Fecha Invalida");
+
     }
-    private static void CalcularHorasFaltantes()
+
+
+    public static bool ControlFechaValida(int dia, int mes, int año)
+
     {
-        int HorasTrabajadas;
-        string dias; 
-        Console.Write("Ingrese la cantidad de horas trabajadas:");
-        HorasTrabajadas= int.Parse(Console.ReadLine());
-
-        Console.Write("Ingrese el dia en el que está:");
-        dias = Console.ReadLine();
-
-       
        
 
-        if (dias == "jueves" || dias=="JUEVES" || dias=="Jueves")
-            Console.Write("las horas faltantes son:" + (5 - HorasTrabajadas + 2));
+
+        if ((dia >= 1 && dia <= 31) && (mes == 1 || mes == 3 ||
+                mes == 5 || mes == 7 || mes == 8 || mes == 10 || mes == 12))
+            return true;
+
+
+        else if ((dia >= 1 && dia <= 30) && (mes == 4 || mes == 6 || mes == 9 || mes == 11))
+            return true;
+
+
+        else if ((dia == 29) && (mes == 2) && (año % 4 == 0) || (dia >= 1 && dia <= 28) && (mes == 2))
+
+            return true;
+
         else
-            Console.Write("las horas faltantes son:" +(5 - HorasTrabajadas));
-
+            return false;
 
     }
     private static void CalcularValorPago()
