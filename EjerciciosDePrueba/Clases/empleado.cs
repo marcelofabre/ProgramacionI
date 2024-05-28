@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EjerciciosDePrueba.Clases
 {
-    abstract class empleado
+    public abstract class empleado
     {
         public string Nombre { get; set; }
         public string Apellido { get; set; }
@@ -19,7 +19,6 @@ namespace EjerciciosDePrueba.Clases
         public virtual string ImprimirDatos()
         {
             return $" {Apellido} {Nombre}";
-
 
         }
     }

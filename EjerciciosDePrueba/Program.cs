@@ -10,7 +10,7 @@ public class ProgramEjercicios
     {
         //PedirNombreYSaludar();
         //Console.WriteLine(CalcularDiasDeVida(1,1,1));
-        Console.WriteLine(CalcularDiasLadosDeUnTriangulosss(1, 1, 1));
+        //Console.WriteLine(CalcularDiasLadosDeUnTriangulosss(1, 1, 1));
         //ImprimirMinimoDe4();
         //CalcularDiasLadosDeUnTriangulo(); 
         //fechasValidasInvalidas();
@@ -25,6 +25,21 @@ public class ProgramEjercicios
         //pruebastereo();
         //pruebaClasesAbstractaYHerencia();
         //pruebacalculadoraPasajePorReferencia();
+        PruebaDeClasesGenéricas();
+    }
+
+    private static void PruebaDeClasesGenéricas()
+    {
+        Empresa<empleado> empresa = new Empresa<empleado>("Neumaticos Debona");
+
+        gerente empleado1 = new gerente("Marcelo", "Fabre");
+        gerente empleado2 = new gerente("Tomas", "Avalos");
+        empresa.agregarEmpleado(empleado1);
+        empresa.agregarEmpleado(empleado2);
+        Console.WriteLine(empresa.ListarPersonas());
+        empresa.quitarEmpleado(empleado2);
+        Console.WriteLine(empresa.ListarPersonas());
+
     }
 
     private static void pruebacalculadoraPasajePorReferencia()
@@ -356,7 +371,7 @@ private static void PedirNombreYSaludar()
 
 
 
-
+   
 
 }
 

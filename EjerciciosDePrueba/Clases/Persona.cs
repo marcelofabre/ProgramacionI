@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EjerciciosDePrueba.Clases
 {
-    internal class Persona
+    public class Persona
     {
         //declaramos los campos y propiedades
         //campo: las variables privadas de la clase

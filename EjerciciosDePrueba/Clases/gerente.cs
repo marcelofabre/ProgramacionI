@@ -16,7 +16,7 @@ namespace EjerciciosDePrueba.Clases
 
         public override string ImprimirDatos()
         {
-            return "Gerente: fyhndmjy ng    |                                                                                                                                                                                                                                                                                                                                                                                                                                                               " + base.ImprimirDatos();
+            return "Gerente:" + base.ImprimirDatos();
         }
 
     }
